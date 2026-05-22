@@ -1,0 +1,27 @@
+name: Run Perfecto AI Scheduler Job
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Perfecto Scheduler Job
+      
+        env:
+          PERFECTO_TOKEN: ${{ secrets.PERFECTO_TOKEN }}
+
+        run: |
+          curl --fail --show-error --silent --location \
+          'https://demo.app.perfectomobile.com/api/v1/scheduler/job/execution' \
+          --header 'Content-Type: application/json' \
+          --header "Perfecto-Authorization: ${PERFECTO_TOKEN}" \
+          --data '{
+            "key": {
+              "visibility": "PUBLIC",
+              "owner": "mike.fey@perfectomobile.onmicrosoft.com",
+              "name": "FeyAPI_Scheduler"
+            }
+          }'
