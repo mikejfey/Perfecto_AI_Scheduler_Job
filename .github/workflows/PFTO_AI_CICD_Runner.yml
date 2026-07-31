@@ -22,6 +22,6 @@ jobs:
             "key": {
               "visibility": "PUBLIC",
               "owner": "mike.fey@perfectomobile.onmicrosoft.com",
-              "name": "AI_CICD"
+              "name": "nrg_cicd"
             }
           }'
