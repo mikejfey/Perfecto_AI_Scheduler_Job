@@ -3,6 +3,14 @@ name: Run Perfecto AI Scheduler Job
 on:
   workflow_dispatch:
 
+ # schedule:
+  #    - cron: '30 0 * * *'
+# pull_request:
+  # branches:
+    # - main
+    # types:
+      # - closed
+
 jobs:
   build:
     runs-on: ubuntu-latest
